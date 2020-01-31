@@ -11,6 +11,11 @@ import UIKit
 class ViewController: UIViewController, ColorDelegate {
     var panel: ColorPanel!// = MazeView()
     var settingsBar: UIView!
+    
+    lazy var dialog: SliderDialogView = {
+        return SliderDialogView()
+    }()
+    
     var sHeight: CGFloat = 56
     
     override func viewDidLoad() {
@@ -34,12 +39,17 @@ class ViewController: UIViewController, ColorDelegate {
             settingsBar.backgroundColor = UIColor(rgb: 0x0000FF)
             view!.addSubview(settingsBar)
             
-            view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(playTapped)))
+            settingsBar.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(playTapped)))
         }
     }
     
     @objc func playTapped() {
-        panel.playTapped()
+//        panel.playTapped()
+        view!.addSubview(dialog)
+        dialog.setHeightWidth(height: view.bounds.height, width: view.bounds.width)
+        dialog.openDialog(60, sHeight)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

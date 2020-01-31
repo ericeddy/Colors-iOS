@@ -17,6 +17,9 @@
 		410FFCE723D75033006E4BC1 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410FFCE323D75033006E4BC1 /* Helper.swift */; };
 		410FFCE823D75033006E4BC1 /* ColorPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410FFCE423D75033006E4BC1 /* ColorPanel.swift */; };
 		410FFCEA23D75C90006E4BC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410FFCE923D75C90006E4BC1 /* ViewController.swift */; };
+		4111E70E23E36E7900BC09FA /* ColorPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4111E70D23E36E7900BC09FA /* ColorPreferences.swift */; };
+		4111E71023E374A900BC09FA /* DialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4111E70F23E374A900BC09FA /* DialogView.swift */; };
+		4111E71223E4866800BC09FA /* SliderDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4111E71123E4866800BC09FA /* SliderDialogView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		410FFCE323D75033006E4BC1 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		410FFCE423D75033006E4BC1 /* ColorPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPanel.swift; sourceTree = "<group>"; };
 		410FFCE923D75C90006E4BC1 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4111E70D23E36E7900BC09FA /* ColorPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPreferences.swift; sourceTree = "<group>"; };
+		4111E70F23E374A900BC09FA /* DialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogView.swift; sourceTree = "<group>"; };
+		4111E71123E4866800BC09FA /* SliderDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderDialogView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,9 @@
 				410FFCE223D75032006E4BC1 /* ColorExtensions.swift */,
 				410FFCE423D75033006E4BC1 /* ColorPanel.swift */,
 				410FFCE323D75033006E4BC1 /* Helper.swift */,
+				4111E70D23E36E7900BC09FA /* ColorPreferences.swift */,
+				4111E70F23E374A900BC09FA /* DialogView.swift */,
+				4111E71123E4866800BC09FA /* SliderDialogView.swift */,
 				410FFCE923D75C90006E4BC1 /* ViewController.swift */,
 				410FFCB723D74FCC006E4BC1 /* Main.storyboard */,
 				410FFCBA23D74FCD006E4BC1 /* Assets.xcassets */,
@@ -267,9 +276,12 @@
 			files = (
 				410FFCEA23D75C90006E4BC1 /* ViewController.swift in Sources */,
 				410FFCE823D75033006E4BC1 /* ColorPanel.swift in Sources */,
+				4111E70E23E36E7900BC09FA /* ColorPreferences.swift in Sources */,
 				410FFCE723D75033006E4BC1 /* Helper.swift in Sources */,
 				410FFCB223D74FCC006E4BC1 /* AppDelegate.swift in Sources */,
 				410FFCE623D75033006E4BC1 /* ColorExtensions.swift in Sources */,
+				4111E71023E374A900BC09FA /* DialogView.swift in Sources */,
+				4111E71223E4866800BC09FA /* SliderDialogView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

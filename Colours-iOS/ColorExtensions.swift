@@ -61,3 +61,47 @@ extension UIColor {
     public class var light_rainbow_83: UIColor { return UIColor(rgb: 0xe65c8a) }
     public class var light_rainbow_84: UIColor { return UIColor(rgb: 0xf26177) }
 }
+
+
+extension UIView {
+    func pinToView(_ pinTo: UIView, _ top: CGFloat = 0, _ bottom: CGFloat = 0, _ left: CGFloat = 0, _ right: CGFloat = 0){
+        setupForAutoLayout(self)
+        setupForAutoLayout(pinTo)
+        let lc_t = NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: pinTo, attribute: .top, multiplier: 1, constant: top)
+        let lc_b = NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: pinTo, attribute: .bottom, multiplier: 1, constant: bottom)
+        let lc_l = NSLayoutConstraint(item: self, attribute: .left, relatedBy: .equal, toItem: pinTo, attribute: .left, multiplier: 1, constant: left)
+        let lc_r = NSLayoutConstraint(item: self, attribute: .right, relatedBy: .equal, toItem: pinTo, attribute: .right, multiplier: 1, constant: right)
+        pinTo.addConstraints([ lc_t, lc_b, lc_l, lc_r ])
+    }
+    func pinToView(_ pinTo: UIView, _ attr: NSLayoutConstraint.Attribute, _ attr2: NSLayoutConstraint.Attribute? = nil, _ const: CGFloat = 0) -> NSLayoutConstraint {
+        let attr2 = attr2 == nil ? attr : attr2!
+        setupForAutoLayout(self)
+        setupForAutoLayout(pinTo)
+        let lc = NSLayoutConstraint(item: self, attribute: attr, relatedBy: .equal, toItem: pinTo, attribute: attr2, multiplier: 1, constant: const)
+        self.addConstraint(lc)
+        return lc
+    }
+    func setHeightWidth(height: CGFloat? = nil, width: CGFloat? = nil) {
+        setupForAutoLayout(self)
+        if let height = height {
+            self.addConstraint(NSLayoutConstraint(item: self, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: height))
+        }
+        if let width = width {
+            self.addConstraint(NSLayoutConstraint(item: self, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: width))
+        }
+    }
+    
+    func getConstraint(_ attr: NSLayoutConstraint.Attribute) -> NSLayoutConstraint? {
+        if let constraint = (self.constraints.filter{$0.firstAttribute == attr}.first) {
+            return constraint
+        }
+        return nil
+    }
+        
+        
+    
+    func setupForAutoLayout(_ view: UIView) {
+        view.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+}
